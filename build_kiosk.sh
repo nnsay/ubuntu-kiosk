@@ -50,7 +50,7 @@ chmod +x control_center.desktop
 gio set control_center.desktop "metadata::trusted" yes
 # application
 mkdir -p ~/.app
-cp $KIOSKSPACE/app/neuralgalaxy-desktop.AppImage ~/.app/
+cp $KIOSKSPACE/app/app.AppImage ~/.app/
 cp $KIOSKSPACE/image/app-logo.png ~/.app/
 rm -rf app.desktop
 touch app.desktop
@@ -65,11 +65,11 @@ Icon[en_US]=/home/$USER/.app/app-logo.png
 Name[en_US]=Neural Galaxy
 Icon[zh_CN]=/home/$USER/.app/app-logo.png
 Name[zh_CN]=优脑银河
-Exec=/home/$USER/.app/neuralgalaxy-desktop.AppImage
+Exec=/home/$USER/.app/app.AppImage
 Name=优脑银河
 Icon=/home/$USER/.app/app-logo.png
 EOF
-chmod +x ~/.app/neuralgalaxy-desktop.AppImage
+chmod +x ~/.app/app.AppImage
 chmod +x app.desktop
 gio set app.desktop "metadata::trusted" yes
 cp -R $KIOSKSPACE/tools ~/.app/

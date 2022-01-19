@@ -14,31 +14,28 @@
 
 ### 2. how to build kiosk machine
 #### 2.1 make USB flash disk
-- plug USB drive into installation server
-- Assuming installation server already has latest linux app image files, execute the below commands in installation server ngiq-infrastructure repo
-  ```
-  cd ngiq-infrastructure/kiosk
-  ./build_usb.sh
-  ```
-  At end, the files in the USB drive looks like:
-  ```
-  navigator-workspace
-  ├── app
-  │   └── neuralgalaxy-desktop.AppImage
-  ├── build_kiosk.sh
-  ├── image
-  │   ├── app-logo.png
-  │   ├── home_background.jpg
-  │   ├── lock_screen.jpg
-  │   └── ng_logo.png
-  └── tools
-      └── config_server_ip.s
-  ```
+the `workspace` folder look like this repo, the only different is the `app` folder, you should put the your application at here.
+```
+workspace
+├── app
+│   └── app.AppImage
+├── build_kiosk.sh
+├── image
+│   ├── app-logo.png
+│   ├── home_background.jpg
+│   ├── lock_screen.jpg
+│   └── ng_logo.png
+```
+The above file can be copy to USB.
 #### 2.2 Setup kiosk OS
-- install ubuntu 18.04.3 desktop minimal os in navigator server
-- plug USB drive into navigator server
-- enter the USB navigator navigator workspace directory and build the kiosk with current login user but not root user
+- install ubuntu 18.04.3 desktop minimal os in target machine
+- plug USB drive into target machine
+- enter the USB target machine workspace directory and build the kiosk with current login user but not root user
   ```
-  cd navigator-workspace
+  cd workspace
   ./build_kiosk.sh
   ```
+
+### 3. Note
+- `优脑银河` and `Neural Galaxy` is a compony name, do not remember to change it in the `build_kiosk.sh` with yours
+- `image` folder picture come from my compony, do not remember to replace them in the `build_kiosk.sh` with yours
